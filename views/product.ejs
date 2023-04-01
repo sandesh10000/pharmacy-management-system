@@ -1,0 +1,41 @@
+<%-include('header')-%>
+    <section id="item">
+        <div class="conatiner">
+            <div class="row mx-auto container-fluid">
+
+                <% if(drug.length){ for(var i=0; i< drug.length; i++) {%>
+                    <div class="item text-center mb-3 col-lg-3 col-sm-4">
+                        <form class="form-signin" action="/product" method="post">
+                            <input style="display:none" type="text" value="<%=i%>">
+                            <img class="img-fluid mb-2" src="img\pro1.jpg" alt="">
+
+                            <p class="p-name mb-0">
+                                <%= drug[i].user%>
+                            </p>
+                            <input style="display:none" type="text" value=" <%= drug[i].user%>" name="user">
+                            <p class="p-name mb-0">
+                                <%= drug[i].user_name%>
+                            </p>
+                            <input style="display:none" type="text" value="<%= drug[i].user_name%>" name="user_name">
+                            <p class="mb-0"> Quantity: <%= drug[i].star%> mg</p>
+                            <input style="display:none" type="text" value=" <%= drug[i].star%>" name="star">
+
+
+                            <h6 class="p-price">
+                                <p> Price: <%= drug[i].price%> Rs/-</p>
+                            </h6>
+                            <input style="display:none" type="text" value="<%= drug[i].price%>" name="price">
+                            <button class="btn">Add to Cart</button>
+                    </div>
+                    </form>
+
+                    <% } }else{ %>
+                        <tr>
+                            <td colspan="3">No user</td>
+                        </tr>
+                        <% } %>
+            </div>
+        </div>
+    </section>
+
+    <%-include('footer')-%>

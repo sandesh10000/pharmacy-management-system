@@ -1,0 +1,65 @@
+<%-include('header')-%>
+  <br>
+  <br>
+  <table class="table table-striped">
+
+    <tbody>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">supplier</th>
+          <th scope="col">medicine</th>
+          <th scope="col">quantity (mg)</th>
+          <th width="col">price (Rs)</th>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <% if(carta.length){ for(var i=0; i< carta.length; i++) {%>
+        <tr>
+          <th scope="row">
+            <%= (i+1) %>
+          </th>
+          <td>
+            <%= carta[i].pharma%>
+
+          </td>
+          <td>
+            <%= carta[i].dname%>
+          </td>
+          <td>
+            <%= carta[i].star%>
+          </td>
+          <td>
+            <%= carta[i].price%>
+          </td>
+
+          <td>
+            <form action="/cart" method="post">
+              <input type="text" style="display: none;" name="id" value="<%= carta[i].id%>">
+              <button class="btn btn-danger btn-block mb-3">Cancel</button>
+            </form>
+          </td>
+          <td>
+            <button class="btn btn-success btn-block mb-3">Pay now</button>
+          </td>
+
+        </tr>
+        <% } }else{ %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td> Nothing in the cart</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+          </tr>
+          <% } %>
+
+    </tbody>
+  </table>
+
+  <!-- ------------------------------------------------------------------------------------------------->
+  <%-include('footer')-%>

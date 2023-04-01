@@ -1,0 +1,30 @@
+<%-include('header')-%>
+  <br>
+  <br>
+
+  <form class="form-signin text-center" action="/additem" method="post">
+    <img class="img-fluid mb-2 rounded" src="img\pro1.jpg" alt="">
+
+    <!-- Username input -->
+    <div class="form-outline mb-2">
+      <input type="text" id="dname" name="dname" placeholder="Medicine name" class="form-control" required />
+
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-2">
+      <input type="text" id="star" name="star" placeholder="Quantity in mg" class="form-control" required />
+
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-2">
+      <input type="text" id="price" name="price" placeholder="price" class="form-control" required />
+
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-3">Add medicine</button>
+  </form>
+  <!-- ------------------------------------------------------------------------------------------------->
+  <%-include('footer')-%>

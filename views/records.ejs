@@ -1,0 +1,47 @@
+<%-include('header')-%>
+  <br>
+  <br>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">patient</th>
+        <th scope="col">city</th>
+        <th scope="col">mobile no.</th>
+        <th width="col">Doctor prescription</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <% if(data.length){ for(var i=0; i< data.length; i++) {%>
+        <tr>
+          <th scope="row">
+            <%= (i+1) %>
+          </th>
+          <td>
+            <%= data[i].patient%>
+          </td>
+          <td>
+            <%= data[i].address%>
+          </td>
+          <td>
+            <%= data[i].mobile%>
+          </td>
+          <td>
+            <%= data[i].docpresc%>
+          </td>
+
+        </tr>
+        <% } }else{ %>
+          <tr>
+            <td colspan="3">No user</td>
+          </tr>
+          <% } %>
+
+    </tbody>
+  </table>
+  <br><br>
+  <%-include('footer')-%>
